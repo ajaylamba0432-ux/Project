@@ -1,0 +1,143 @@
+<html>
+    <head>
+        <style type="text/css">
+            .cl{
+                width: 50px;
+                height:50px;
+                background-color: coral;
+            }
+            input[type=button]:hover{
+                background-color: lightgreen;
+            }
+            input[type=reset]:hover{
+                background-color: lightgreen;
+            }
+            input[value="+"],
+            input[value="-"],
+            input[value="*"],
+            input[value="/"]{
+                background-color: teal;
+            }
+            input[value="="]{
+                background-color: slateblue;
+            }
+            input[value="1"],
+            input[value="5"],
+            input[value="7"]{
+                background-color: royalblue;
+            }
+            input[value="2"],
+            input[value="6"],
+            input[value="8"]{
+                background-color:green;
+            }
+            input[value="3"],
+            input[value="4"],
+            input[value="9"]{
+                background-color: aqua;
+            }
+            body{
+                margin: 0;
+                background: linear-gradient(135deg, #dbeafe, #ecfeff);
+            }
+            input[type=reset]{
+                background-color:darkslateblue;   
+            }
+            table{
+                border-radius: 30px;
+                border-color: cornflowerblue;
+                padding: 30px;
+                background-color:lightcoral;
+            }
+            input[type=text]{
+                background-color: lightblue;
+                font-size: 30px;
+                font-family:sans-serif;
+                border-radius: 20px;
+            }
+            td{
+                border-radius: 20px;
+                text-align: center;
+                font-size: 30px;
+            }
+            input[type=button]{
+                border-radius: 20px;
+                font-size: 30px;
+            }
+            input[type=reset]{
+                border-radius: 20px;
+                font-size:15px;
+            }
+        </style>
+        <script>
+            let old,new1,res,sym="";
+            function fun1(a)            
+            {
+                f1.tval.value+=a.value
+            }
+            function fun2(b)
+            {
+                old=f1.tval.value
+                f1.tval.value=""
+                sym=b.value
+            }
+            function result()
+            {                
+                new1=f1.tval.value
+                if(sym=="+")
+                {
+                    res=eval(old)+eval(new1)
+                }
+                if(sym=="-")
+                {
+                    res=eval(old)-eval(new1)
+                }
+                if(sym=="*")
+                {
+                    res=eval(old)*eval(new1)
+                }
+                if(sym=="/")
+                {
+                    res=eval(old)/eval(new1)
+                }
+                f1.tval.value=res;
+            }
+        </script>
+    </head>
+    <body>
+        <form name="f1"><br>
+            <table border="5" cellpadding="10" cellspacing="10" align="center">
+                <tr>
+                    <td colspan="4"><font size="10px">Calculator Design</font></td>
+                </tr>
+                <tr >
+                    <td colspan="4"><input type="text" size="30"  name="tval"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" class="cl" name="t1" value="1" onclick="fun1(t1)"></td>
+                    <td><input type="button" class="cl" name="t2" value="2" onclick="fun1(t2)"></td>
+                    <td><input type="button" class="cl" name="t3" value="3" onclick="fun1(t3)"></td>
+                    <td><input type="button" class="cl" name="ts" value="+" onclick="fun2(ts)"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" class="cl" name="t4" value="4" onclick="fun1(t4)" ></td>
+                    <td><input type="button" class="cl" name="t5" value="5" onclick="fun1(t5)"></td>
+                    <td><input type="button" class="cl" name="t6" value="6" onclick="fun1(t6)"></td>
+                    <td><input type="button" class="cl" name="tsu" value="-" onclick="fun2(tsu)"></td>
+                </tr> 
+                <tr>
+                    <td><input type="button" class="cl" name="t7" value="7" onclick="fun1(t7)"></td>
+                    <td><input type="button" class="cl" name="t8" value="8" onclick="fun1(t8)"></td>
+                    <td><input type="button" class="cl" name="t9" value="9" onclick="fun1(t9)"></td>
+                    <td><input type="button" class="cl" name="tm" value="*" onclick="fun2(tm)"></td>
+                </tr> 
+                <tr>
+                    <td><input type="reset" class="cl" name="tdot" value="Reset "onclick="fun1(reset)"></td>
+                    <td><input type="button" class="cl" name="tz" value="0"  onclick="fun1(tz)"></td>
+                    <td><input type="button" class="cl" name="tdd" value="/" onclick="fun2(tdd)"></td>
+                    <td><input type="button" class="cl" name="equal" value="=" onclick="result()"></td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>
